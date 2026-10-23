@@ -4,6 +4,8 @@ Local community draft by vibe-code-viking, based on [humblemuzzu/dumbtv](https:/
 
 A quiet TV dashboard with uppercase app names, optional monochrome corner icons, darkened brand-color fades, thin white focus outlines, black tile borders, and a bundled Charcoal Smoke wallpaper.
 
+[Download the preview APK](https://github.com/vibe-code-viking/dumbtv/releases/tag/v0.1.0-preview.1) — read the compatibility and signing notes below before installing.
+
 ## Status
 
 Source preview. The generic version passed local build checks and an isolated fresh installation on a Fire OS 8 TV, including app discovery, theme switching and preference persistence. Home interception and recovery for the generic build have not yet been tested. The earlier household-specific variant was tested on one Fire OS 8 device. Native Fire TV text search uses an Amazon launcher helper and may vary by model or firmware. LG webOS is not supported by this Android launcher.

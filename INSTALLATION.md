@@ -15,3 +15,16 @@ If Home switches the TV to the wrong HDMI input, check Fire TV Settings > Equipm
 ## Scope
 
 This is an Android/Fire TV launcher. LG Developer Mode does not make this APK a webOS app. No root, system partition changes or factory reset are required or appropriate.
+
+## Preview APK: open manually first
+
+Download `dumbtv-viking-preview.apk` and the SHA256 file from this repository's v0.1.0-preview.1 release. Check the hash, then use your authorized ADB connection:
+
+```sh
+adb install -r dumbtv-viking-preview.apk
+adb shell am start -n tv.dumbtv.home/.Home
+```
+
+These commands install/open the app without enabling Home interception. Stop if ADB reports UPDATE_INCOMPATIBLE: the existing launcher uses another signing key. Do not automatically uninstall it. Keep the current working setup, back up settings where supported and plan recovery before replacing it. The separately tested preview app was an isolated package; this downloadable APK uses the upstream `tv.dumbtv.home` package.
+
+The default `launcher/install.sh` download path remains disabled during preview because its automatic Home activation has not yet been validated for this release. Its `--build` and `--undo` modes are inherited from upstream and still require careful review. Building locally generates a different signing identity unless you supply your own matching key.

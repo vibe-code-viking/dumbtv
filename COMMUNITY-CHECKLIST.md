@@ -8,11 +8,13 @@
 - [ ] Validate icon import on supported Fire OS storage restrictions; add a usable picker or desktop import workflow if needed.
 - [ ] Test unknown/malformed icons and settings persistence.
 - [ ] Decide release name/version and package/signing upgrade policy.
-- [ ] Build a generic signed release with a securely backed-up private key.
+- [x] Build a generic signed preview with a separate private key.
+- [ ] Back up the release signing key securely outside this machine.
 - [ ] Review final README screenshots, asset provenance and privacy scan.
 - [x] Authenticate GitHub as vibe-code-viking.
 - [x] Create a public fork.
 - [x] Prepare the source preview commit.
-- [ ] Commit and push reviewed changes; publish the release.
+- [x] Commit and push reviewed source changes.
+- [ ] Publish and verify the preview APK release.
 
 This is a source preview; a public signed APK release remains a separate milestone.

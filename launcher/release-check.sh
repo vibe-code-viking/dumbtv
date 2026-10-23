@@ -8,11 +8,7 @@
 #   ./launcher/release-check.sh --manifest only launcher/version.env (used by CI)
 set -uo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
-REPO= # Set only after creating the reviewed community repository.
-if [[ -z $REPO ]]; then
-  echo "Viking draft: release repository and checksum not configured." >&2
-  exit 1
-fi
+REPO=https://github.com/vibe-code-viking/dumbtv
 
 mode=${1:-all}
 case $mode in
@@ -36,7 +32,7 @@ sha256() {
 source version.env
 echo "version $VERSION"
 
-[[ $VERSION =~ ^[0-9]+\.[0-9]+$ ]] || bad "VERSION '$VERSION' is not <major>.<minor>"
+[[ $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[A-Za-z0-9.]+)?$ ]] || bad "VERSION '$VERSION' is not a semantic preview/release version"
 [[ $APK_SHA256 =~ ^[0-9a-f]{64}$ ]] || bad "APK_SHA256 is not a 64-char lowercase hex digest"
 grep -q 'version.env' install.sh || bad "install.sh does not source version.env"
 grep -q 'version.env' build.sh   || bad "build.sh does not source version.env"
@@ -56,20 +52,20 @@ fi
 
 # --- remote release ---------------------------------------------------------
 if [[ $mode == both || $mode == --remote ]]; then
-  URL=$REPO/releases/download/launcher-v$VERSION/dumbtv-home.apk
+  URL=$REPO/releases/download/v$VERSION/dumbtv-viking-preview.apk
   code=$(curl -sIL -o /dev/null -w '%{http_code}' "$URL" 2>/dev/null || echo 000)
   if [[ $code == 200 ]]; then
     tmp=$(mktemp -t dumbtv-release.XXXXXX)
     if curl -fsSL -o "$tmp" "$URL"; then
       got=$(sha256 "$tmp")
-      [[ $got == "$APK_SHA256" ]] && ok "release launcher-v$VERSION matches" \
+      [[ $got == "$APK_SHA256" ]] && ok "release v$VERSION matches" \
         || bad "release APK is $got, version.env says $APK_SHA256 — re-upload the build"
     else
       bad "could not download $URL"
     fi
     rm -f "$tmp"
   else
-    bad "release launcher-v$VERSION not reachable ($code): $URL"
+    bad "release v$VERSION not reachable ($code): $URL"
   fi
 fi
 
