@@ -1,4 +1,4 @@
-# DumbTV — Viking Theme
+# DumbTV Viking Theme
 
 Local community draft by vibe-code-viking, based on [humblemuzzu/dumbtv](https://github.com/humblemuzzu/dumbtv). Unofficial independent customization. Original code and notices remain under the MIT license in LICENSE.
 
@@ -14,7 +14,7 @@ A quiet TV dashboard with uppercase app names, optional monochrome corner icons,
 
 *Customized installation with user-supplied white logos and a personal app selection. These logo files are not included in the release APK or supplied as an icon pack. App names and marks identify their respective services; no affiliation or endorsement is implied. This screenshot does not grant permission to reuse the marks.*
 
-[Download the preview APK](https://github.com/vibe-code-viking/dumbtv/releases/tag/v0.1.0-preview.1) � read the compatibility and signing notes below before installing.
+[Download the preview APK](https://github.com/vibe-code-viking/dumbtv/releases/tag/v0.1.0-preview.1) — read the compatibility and signing notes below before installing.
 
 ## Status
 
