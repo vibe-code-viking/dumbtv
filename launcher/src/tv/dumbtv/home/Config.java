@@ -74,8 +74,8 @@ final class Config {
             new String[] {"auto", "tv", "home"},
             new String[] {"Automatic", "The TV's app", "dumbtv home"});
     static final Choice BACKGROUND = new Choice("background", "Background", "black",
-            new String[] {"black", "graphite", "midnight", "image", "adaptive", "adaptive-tint"},
-            new String[] {"Black", "Graphite", "Midnight", "Image file", "Adaptive solid", "Adaptive wallpaper tint"});
+            new String[] {"black", "graphite", "midnight", "image", "adaptive", "adaptive-tint", "charcoal-smoke"},
+            new String[] {"Black", "Graphite", "Midnight", "Image file", "Adaptive solid", "Adaptive wallpaper tint", "Charcoal Smoke"});
     static final Choice DIM = new Choice("dim", "Image dim", "40",
             new String[] {"0", "20", "40", "60", "80"},
             new String[] {"0%", "20%", "40%", "60%", "80%"});
@@ -84,7 +84,12 @@ final class Config {
             new String[] {"off", "visit", "hourly", "daily", "daytime"},
             new String[] {"Off", "Every return home", "Every hour", "Every day", "By time of day"});
 
-    static final Choice[] CHOICES = {ACCENT, TILES, LAYOUT, LABELS, CLOCK, INPUTS, SWITCH, BACKGROUND, DIM, ROTATE};
+    static final Choice TILE_STYLE = new Choice("tile_style", "Tile style", "brand",
+            new String[] {"brand", "monochrome"}, new String[] {"Brand fades", "Monochrome"});
+
+    static final Choice CORNER_ICONS = new Choice("corner_icons", "Corner app icons", "on",
+            new String[] {"on", "off"}, new String[] {"Shown", "Hidden"});
+    static final Choice[] CHOICES = {ACCENT, TILES, LAYOUT, LABELS, CLOCK, INPUTS, SWITCH, BACKGROUND, DIM, ROTATE, TILE_STYLE, CORNER_ICONS};
 
     /** Folder of wallpapers, next to home.conf, that Background › Image file rotates through. */
     static final String WALLPAPERS = "wallpapers";
@@ -93,7 +98,7 @@ final class Config {
     private static final int[] ACCENTS = {
         0xFFFFFFFF, 0xFF3D8BFF, 0xFF2BC4E8, 0xFF34C759, 0xFFFFB340, 0xFFFF5147, 0xFFFF5C9D, 0xFFA07CFF,
     };
-    private static final int[] BACKGROUNDS = {0xFF000000, 0xFF141518, 0xFF0B1220, 0xFF000000, 0xFF141518, 0xFF141518};
+    private static final int[] BACKGROUNDS = {0xFF000000, 0xFF141518, 0xFF0B1220, 0xFF000000, 0xFF141518, 0xFF141518, 0xFF101214};
 
     private static Config instance;
 
@@ -114,6 +119,16 @@ final class Config {
         dir = external != null ? external : c.getFilesDir();
         file = new File(dir, FILE);
         refresh();
+        if (!file.isFile()) {
+            values.put("accent", "white");
+            values.put("layout", "grid");
+            values.put("labels", "never");
+            values.put("inputs", "off");
+            values.put("background", "charcoal-smoke");
+            values.put("artwork", "text");
+            values.put("tile_style", "brand");
+            save();
+        }
     }
 
     /** Changes every time a setting changes, from the UI or from the file on disk. */

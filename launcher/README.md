@@ -1,3 +1,5 @@
+> Viking fork draft: the release links and release instructions below describe upstream. No Viking release APK exists yet. The default installer refuses downloads; use the reviewed source build workflow.
+
 # dumbtv home
 
 A home screen for Fire TV that does one job: show your apps and your HDMI inputs.

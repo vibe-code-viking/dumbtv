@@ -9,7 +9,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 
 # shellcheck disable=SC1091
 source version.env
-APK_URL=https://github.com/humblemuzzu/dumbtv/releases/download/launcher-v$VERSION/dumbtv-home.apk
+APK_URL= # Community release URL intentionally unset until first reviewed release.
 
 PKG=tv.dumbtv.home
 GUARD=$PKG/$PKG.Guard
@@ -27,6 +27,11 @@ case ${1:-} in
   --undo) mode=undo ;;
   *) echo "usage: $0 [--build | --undo]" >&2; exit 2 ;;
 esac
+
+if [[ $mode == release ]]; then
+  echo "error: Viking source draft has no published APK. Build locally with --build after reviewing the install workflow." >&2
+  exit 1
+fi
 
 command -v "$ADB" >/dev/null || { echo "error: adb not found — install Android platform-tools" >&2; exit 1; }
 state=$(adb_ get-state 2>/dev/null || true)

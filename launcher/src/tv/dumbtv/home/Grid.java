@@ -21,7 +21,7 @@ final class Grid extends ViewGroup {
         setClipChildren(false);
         setClipToPadding(false);
         hGap = Ui.dp(c, 18);
-        vGap = Ui.dp(c, 18);
+        vGap = Ui.dp(c, 12);
     }
 
     private int columns(int availableWidth, int childWidth) {

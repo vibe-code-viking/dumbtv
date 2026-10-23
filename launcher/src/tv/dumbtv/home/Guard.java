@@ -40,7 +40,25 @@ public final class Guard extends AccessibilityService {
     private static final long LAUNCH_FALLBACK_MS = 150;
 
     private static volatile boolean paused;
+    private static volatile boolean searching;
     private static Guard running;
+    /** Amazon's exported menu helper delegates to its own privileged text-search screen. */
+    static void search(Context c) {
+        paused = true;
+        searching = true;
+        Intent intent = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(
+            "amzn://com.amazon.tv.launcher/menuNavigation?locationID=l_text_search"))
+            .setClassName(AMAZON,"com.amazon.tv.launcher.util.MenuNavigationHelperActivity")
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try { c.startActivity(intent); }
+        catch (ActivityNotFoundException | SecurityException e) {
+            paused=false; searching=false;
+            android.widget.Toast.makeText(c,"Fire TV search is unavailable",android.widget.Toast.LENGTH_LONG).show();
+        }
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            if(searching) { searching=false; paused=false; }
+        },15000);
+    }
 
     private final Handler handler = new Handler(Looper.getMainLooper());
     private final Runnable uncover = this::uncover;
@@ -120,6 +138,12 @@ public final class Guard extends AccessibilityService {
         if (e.getEventType() != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return;
         CharSequence pkg = e.getPackageName(), cls = e.getClassName();
         if (pkg == null) return;
+        if (searching && AMAZON.contentEquals(pkg) && cls != null
+                && cls.toString().contains("TextSearch")) {
+            searching=false;
+            handler.postDelayed(() -> paused=false,700);
+            return;
+        }
         if (!AMAZON.contentEquals(pkg)) {
             if ("com.android.systemui".contentEquals(pkg) || "android".contentEquals(pkg)) return;
             paused = false;

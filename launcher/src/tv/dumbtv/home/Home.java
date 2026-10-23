@@ -122,7 +122,7 @@ public final class Home extends Activity {
             title = Ui.text(Home.this, 12, Ui.FAINT, Ui.MEDIUM);
             title.setText(name.toUpperCase(Locale.ROOT));
             title.setLetterSpacing(0.14f);
-            title.setPadding(edge, dp(20), edge, dp(2));
+            title.setPadding(edge, dp(12), edge, dp(2));
             strip = new LinearLayout(Home.this);
             strip.setClipChildren(false);
             strip.setClipToPadding(false);
@@ -204,7 +204,7 @@ public final class Home extends Activity {
         int fit = getResources().getDisplayMetrics().widthPixels / (cardSize()[0] + dp(18)) + 1;
         for (Item it : Catalog.visible(cfg, Catalog.APPS, apps.all)) {
             if (fit-- <= 0) break;
-            Catalog.art(getPackageManager(), it);
+            Catalog.art(this, it);
             it.artRequested = true;
         }
     }
@@ -456,26 +456,46 @@ public final class Home extends Activity {
         column.setOrientation(LinearLayout.VERTICAL);
         column.setClipChildren(false);
         column.setClipToPadding(false);
-        column.setPadding(0, dp(40), 0, dp(32));
+        column.setPadding(0, dp(24), 0, dp(24));
         scroll.addView(column, new FrameLayout.LayoutParams(MATCH, WRAP));
 
         LinearLayout head = new LinearLayout(this);
-        head.setGravity(Gravity.TOP);
-        head.setPadding(dp(56), 0, dp(56), dp(12));
-        LinearLayout when = new LinearLayout(this);
-        when.setOrientation(LinearLayout.VERTICAL);
-        clock = Ui.text(this, 52, Ui.TEXT, Ui.LIGHT);
+        head.setGravity(Gravity.CENTER_VERTICAL);
+        head.setPadding(dp(56), 0, dp(56), dp(8));
+        TextView homeTitle = Ui.text(this, 16, Ui.TEXT, android.graphics.Typeface.DEFAULT_BOLD);
+        homeTitle.setText("HOME");
+        head.addView(homeTitle);
+        TextView search = new TextView(this) {
+            private final android.graphics.Paint pen = new android.graphics.Paint(3);
+            @Override protected void onDraw(android.graphics.Canvas c) {
+                super.onDraw(c);
+                pen.setColor(isFocused() ? Color.BLACK : Color.WHITE);
+                pen.setStyle(android.graphics.Paint.Style.STROKE);
+                pen.setStrokeWidth(dp(1.5f));
+                float x=getWidth()/2f-dp(2), y=getHeight()/2f-dp(2);
+                c.drawCircle(x,y,dp(5.5f),pen);
+                c.drawLine(x+dp(4),y+dp(4),x+dp(9),y+dp(9),pen);
+            }
+        };
+        search.setContentDescription("Search across streaming services");
+        search.setFocusable(true); search.setClickable(true);
+        search.setOnClickListener(v -> Guard.search(this));
+        LinearLayout.LayoutParams searchSize = new LinearLayout.LayoutParams(dp(40), dp(36));
+        searchSize.leftMargin=dp(10); head.addView(search,searchSize); chips.add(search);
+        View space = new View(this);
+        head.addView(space,new LinearLayout.LayoutParams(0,1,1f));
+        clock = Ui.text(this, 27, Ui.TEXT, Ui.LIGHT);
         date = Ui.text(this, 15, Ui.MUTED, Ui.MEDIUM);
-        date.setPadding(dp(2), dp(8), 0, 0);
-        when.addView(clock);
-        when.addView(date);
-        head.addView(when, new LinearLayout.LayoutParams(0, WRAP, 1f));
-        head.addView(chip("Options", v -> startActivity(new Intent(this, Options.class))));
-        head.addView(chip("Settings", v -> openSettings()));
-        column.addView(head, new LinearLayout.LayoutParams(MATCH, WRAP));
+        head.addView(clock);
+        column.addView(head,new LinearLayout.LayoutParams(MATCH,WRAP));
 
-        apps = new Row(Catalog.APPS, "Apps", column);
+        apps = new Row(Catalog.APPS, "Your apps", column);
         inputs = new Row(Catalog.INPUTS, "Inputs", column);
+        LinearLayout footer = new LinearLayout(this);
+        footer.setPadding(dp(46),dp(10),dp(56),0);
+        footer.addView(chip("Settings", v -> startActivity(new Intent(this, Options.class))));
+        footer.addView(chip("Fire TV settings", v -> openSettings()));
+        column.addView(footer);
         return root;
     }
 
@@ -620,7 +640,7 @@ public final class Home extends Activity {
     private void loadArt(Item it) {
         it.artRequested = true;
         io.execute(() -> {
-            Catalog.art(getPackageManager(), it);
+            Catalog.art(this, it);
             ui.post(() -> {
                 ViewGroup tiles = apps.tiles();
                 for (int i = 0; i < tiles.getChildCount(); i++) tiles.getChildAt(i).invalidate();
@@ -678,6 +698,10 @@ public final class Home extends Activity {
     }
 
     private int[] cardSize() {
+        if ("monochrome".equals(cfg.get("theme", ""))) {
+            int width = (getResources().getDisplayMetrics().widthPixels - dp(112) - dp(72)) / 5;
+            return new int[] {width, Math.round(width * 0.55f)};
+        }
         switch (cfg.get(Config.TILES)) {
             case "small":
                 return new int[] {dp(144), dp(81)};
@@ -718,6 +742,20 @@ public final class Home extends Activity {
 
     private void background() {
         String mode = cfg.get(Config.BACKGROUND);
+        if ("charcoal-smoke".equals(mode)) {
+            stopColorAnimation();
+            targetColor = 0;
+            tintWallpaper = false;
+            tint.setBackgroundColor(Color.TRANSPARENT);
+            shade.setBackgroundColor(Color.TRANSPARENT);
+            root.setBackgroundColor(Color.BLACK);
+            if (!"builtin:charcoal-smoke".equals(wallKey)) {
+                wallKey = "builtin:charcoal-smoke";
+                wall.setImageResource(R.drawable.charcoal_smoke);
+            }
+            backgroundMode = mode;
+            return;
+        }
         boolean image = "image".equals(mode) || "adaptive-tint".equals(mode);
         File file = image ? cfg.wallpaper() : null;
         tintWallpaper = "adaptive-tint".equals(mode) && file != null;

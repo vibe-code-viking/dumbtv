@@ -8,7 +8,11 @@
 #   ./launcher/release-check.sh --manifest only launcher/version.env (used by CI)
 set -uo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
-REPO=https://github.com/humblemuzzu/dumbtv
+REPO= # Set only after creating the reviewed community repository.
+if [[ -z $REPO ]]; then
+  echo "Viking draft: release repository and checksum not configured." >&2
+  exit 1
+fi
 
 mode=${1:-all}
 case $mode in

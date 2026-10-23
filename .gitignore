@@ -8,3 +8,17 @@ launcher/*.keystore
 video/
 __pycache__/
 *.pyc
+
+# Private local assets, device state and signing material
+local-icons/
+*.keystore
+*.jks
+*.pem
+*.key
+*.apk
+*.log
+.env
+.env.*
+
+# User-supplied local build overrides
+launcher/res/drawable-nodpi/mono_*.png

@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "scope": "Source pointers only; no automatic downloads; no included service logos.",
+  "apps": [
+    {
+      "name": "AMC+",
+      "package_id": "com.amcplus.amcfiretv",
+      "package_status": "verified on user device",
+      "source_url": "https://d9hhrg4mnvzow.cloudfront.net/join.amcplus.com/a9b3fc1e-amcplus-logo-sm.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Crunchyroll",
+      "package_id": "com.crunchyroll.crunchyroid",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/crunchyroll.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Disney+",
+      "package_id": "com.disney.disneyplus",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/main/svg/disney-plus.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "HBO Max",
+      "package_id": "com.hbo.hbonow",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hbomax.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Hulu",
+      "package_id": "com.hulu.plus",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/main/svg/hulu.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Netflix",
+      "package_id": "com.netflix.ninja",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/netflix.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Pandora",
+      "package_id": "com.pandora.android.gtv",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pandora.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Paramount+",
+      "package_id": "com.cbs.ott",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/paramountplus.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Peacock",
+      "package_id": "com.peacock.peacockfiretv",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/main/svg/peacock-light.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Plex",
+      "package_id": "com.plexapp.android",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/plex.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Prime Video",
+      "package_id": "com.amazon.firebat",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/main/svg/prime-video-light.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Starz",
+      "package_id": "com.starz.starzplay.firetv",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/starz.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "YouTube",
+      "package_id": "com.amazon.firetv.youtube",
+      "package_status": "verified on user device",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/youtube.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Apple TV",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/appletv.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "YouTube TV",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/main/svg/youtube-tv.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Tubi",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tubi.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Fubo",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/fubo.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "DAZN",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/dazn.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "NBA",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nba.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "MLB",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mlb.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "MUBI",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mubi.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Spotify",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/spotify.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "iHeartRadio",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/iheartradio.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Kodi",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kodi.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "VLC",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vlcmediaplayer.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Jellyfin",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/jellyfin.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Emby",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/emby.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    },
+    {
+      "name": "Twitch",
+      "package_id": null,
+      "package_status": "not verified",
+      "source_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/twitch.svg",
+      "redistribution_review": "pending",
+      "bundled": false
+    }
+  ]
+}
