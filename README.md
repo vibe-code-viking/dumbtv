@@ -8,6 +8,12 @@ A quiet TV dashboard with uppercase app names, optional monochrome corner icons,
 
 *Actual isolated test installation using installed app icons in grayscale. Optional user-supplied white logos are not included. The grid scrolls to additional apps.*
 
+### Optional custom-logo example
+
+![Example of Viking Theme with locally supplied white app logos](docs/images/viking-optional-icons-example.png)
+
+*Customized installation with user-supplied white logos and a personal app selection. These logo files are not included in the release APK or supplied as an icon pack. App names and marks identify their respective services; no affiliation or endorsement is implied. This screenshot does not grant permission to reuse the marks.*
+
 [Download the preview APK](https://github.com/vibe-code-viking/dumbtv/releases/tag/v0.1.0-preview.1) — read the compatibility and signing notes below before installing.
 
 ## Status

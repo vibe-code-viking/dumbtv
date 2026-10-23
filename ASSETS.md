@@ -6,3 +6,5 @@
 - Screenshots are illustrative previews, not a grant of rights to service marks. Review imagery independently before public distribution.
 
 - `docs/images/viking-brand-fades-preview.png`: actual isolated community test build screenshot, supplied for interface illustration. It shows installed app icons, not redistributed standalone logo files. No account/device/network identifiers are visible. Service marks remain third-party property.
+
+- `docs/images/viking-optional-icons-example.png`: illustrative screenshot of the customized installation, showing optional locally supplied white service logos. It contains no visible private identifiers. Standalone logo assets are not provided; inclusion in a screenshot does not grant asset rights or establish brand approval.
