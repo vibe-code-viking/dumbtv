@@ -4,3 +4,5 @@
 - Upstream launcher icon/banner and other original resources retain upstream provenance and license notices.
 - No third-party streaming-service SVG/PNG logos are bundled. BrandColors contains curated background accents; some blends are design interpretations rather than official prescribed backgrounds. Brand associations may change with rebrands.
 - Screenshots are illustrative previews, not a grant of rights to service marks. Review imagery independently before public distribution.
+
+- `docs/images/viking-brand-fades-preview.png`: actual isolated community test build screenshot, supplied for interface illustration. It shows installed app icons, not redistributed standalone logo files. No account/device/network identifiers are visible. Service marks remain third-party property.
