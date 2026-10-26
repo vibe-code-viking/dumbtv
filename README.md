@@ -1,4 +1,4 @@
-# DumbTV â€” Afterglow
+# DumbTV Afterglow Skin
 
 Previously called Viking Theme. Community skin by vibe-code-viking, based on [humblemuzzu/dumbtv](https://github.com/humblemuzzu/dumbtv). Unofficial independent customization. Original code and notices remain under the MIT license in LICENSE.
 
