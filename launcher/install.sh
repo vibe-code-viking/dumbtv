@@ -29,7 +29,7 @@ case ${1:-} in
 esac
 
 if [[ $mode == release ]]; then
-  echo "error: Viking source draft has no published APK. Build locally with --build after reviewing the install workflow." >&2
+  echo "error: Afterglow source draft has no published APK. Build locally with --build after reviewing the install workflow." >&2
   exit 1
 fi
 

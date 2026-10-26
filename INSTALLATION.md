@@ -18,10 +18,10 @@ This is an Android/Fire TV launcher. LG Developer Mode does not make this APK a 
 
 ## Preview APK: open manually first
 
-Download `dumbtv-viking-preview.apk` and the SHA256 file from this repository's v0.1.0-preview.1 release. Check the hash, then use your authorized ADB connection:
+For the upcoming Afterglow preview, use `dumbtv-afterglow-preview.apk` and its SHA256 file once v0.1.0-preview.2 is published. The older v0.1.0-preview.1 release still uses `dumbtv-viking-preview.apk`. Check the hash, then use your authorized ADB connection:
 
 ```sh
-adb install -r dumbtv-viking-preview.apk
+adb install -r dumbtv-afterglow-preview.apk
 adb shell am start -n tv.dumbtv.home/.Home
 ```
 

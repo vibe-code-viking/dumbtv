@@ -1,4 +1,4 @@
-> Viking fork draft: the release links and release instructions below describe upstream. A manually installed Viking preview APK is available from this fork. The default installer refuses downloads; use the reviewed source build workflow.
+> Afterglow fork draft: the release links and release instructions below describe upstream. A manually installed Afterglow preview APK is available from this fork. The default installer refuses downloads; use the reviewed source build workflow.
 
 # dumbtv home
 

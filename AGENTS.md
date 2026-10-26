@@ -210,5 +210,5 @@ short: `python3 -m unittest discover -s tests`, `python3 catalog/validate.py`, a
 (`tests/fake_tv.py`) and never touch a real one.
 
 
-## Viking theme fork
+## Afterglow skin fork
 Read docs/ICON-WORKFLOW.md before sourcing or adding brand assets. No household allowlist, identifiers, pairing keys or signing keys may be committed. Do not run broad device-cleanup scripts for a theme-only request. README.md describes this fork; README.upstream.md preserves upstream context.

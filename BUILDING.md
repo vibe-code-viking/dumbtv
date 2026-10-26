@@ -8,4 +8,4 @@ bash launcher/build.sh
 
 The upstream build script handles its own local signing key. Keep all signing material private; do not commit generated APKs or keys. Publish approved APKs as GitHub Release assets, not source files. Back up the release signing key privately so future upgrades can use the same identity. The household APK and its signing key are not included in this source draft.
 
-For Windows, use Git Bash/WSL with a matching SDK toolchain. A portable native Windows build workflow and automated release signing remain follow-up work. The published preview is signed with a separate private Viking release key, not the household test key. The local draft was checked with platform 25, build-tools 34, JDK 17 and javac warnings treated as errors.
+For Windows, use Git Bash/WSL with a matching SDK toolchain. A portable native Windows build workflow and automated release signing remain follow-up work. The published preview is signed with a separate private Afterglow release key, not the household test key. The local draft was checked with platform 25, build-tools 34, JDK 17 and javac warnings treated as errors.

@@ -44,7 +44,7 @@ if [[ $mode == both || $mode == --local ]]; then
   APK=build/dumbtv-home-$VERSION.apk
   if [[ -f $APK ]]; then
     got=$(sha256 "$APK")
-    [[ $got == "$APK_SHA256" ]] && ok "$APK matches" || bad "$APK is $got, version.env says $APK_SHA256 — rebuild and update the hash"
+    [[ $got == "$APK_SHA256" ]] && ok "$APK matches" || bad "$APK is $got, version.env says $APK_SHA256 â€” rebuild and update the hash"
   else
     [[ $mode == --local ]] && bad "$APK not built (run ./build.sh)" || echo "  note  $APK not built, skipping local check"
   fi
@@ -52,14 +52,14 @@ fi
 
 # --- remote release ---------------------------------------------------------
 if [[ $mode == both || $mode == --remote ]]; then
-  URL=$REPO/releases/download/v$VERSION/dumbtv-viking-preview.apk
+  URL=$REPO/releases/download/v$VERSION/dumbtv-afterglow-preview.apk
   code=$(curl -sIL -o /dev/null -w '%{http_code}' "$URL" 2>/dev/null || echo 000)
   if [[ $code == 200 ]]; then
     tmp=$(mktemp -t dumbtv-release.XXXXXX)
     if curl -fsSL -o "$tmp" "$URL"; then
       got=$(sha256 "$tmp")
       [[ $got == "$APK_SHA256" ]] && ok "release v$VERSION matches" \
-        || bad "release APK is $got, version.env says $APK_SHA256 — re-upload the build"
+        || bad "release APK is $got, version.env says $APK_SHA256 â€” re-upload the build"
     else
       bad "could not download $URL"
     fi

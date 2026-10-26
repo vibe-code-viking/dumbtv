@@ -43,7 +43,7 @@ public final class Options extends Activity {
         scroll.addView(list);
 
         TextView title = Ui.text(this, 30, Ui.TEXT, Ui.LIGHT);
-        title.setText("Options");
+        title.setText(getString(R.string.app_name) + " settings");
         title.setPadding(dp(16), 0, 0, dp(20));
         list.addView(title);
 

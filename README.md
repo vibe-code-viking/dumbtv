@@ -1,20 +1,20 @@
-# DumbTV — Viking Theme
+# DumbTV â€” Afterglow
 
-Local community draft by vibe-code-viking, based on [humblemuzzu/dumbtv](https://github.com/humblemuzzu/dumbtv). Unofficial independent customization. Original code and notices remain under the MIT license in LICENSE.
+Previously called Viking Theme. Community skin by vibe-code-viking, based on [humblemuzzu/dumbtv](https://github.com/humblemuzzu/dumbtv). Unofficial independent customization. Original code and notices remain under the MIT license in LICENSE.
 
 A quiet TV dashboard with uppercase app names, optional monochrome corner icons, darkened brand-color fades, thin white focus outlines, black tile borders, and a bundled Charcoal Smoke wallpaper.
 
-![Viking Theme on Fire TV with Brand Fades and Charcoal Smoke](docs/images/viking-brand-fades-preview.png)
+![Afterglow on Fire TV with Brand Fades and Charcoal Smoke](docs/images/afterglow-brand-fades-preview.png)
 
 *Actual isolated test installation using installed app icons in grayscale. Optional user-supplied white logos are not included. The grid scrolls to additional apps.*
 
 ### Optional custom-logo example
 
-![Example of Viking Theme with locally supplied white app logos](docs/images/viking-optional-icons-example.png)
+![Example of Afterglow with locally supplied white app logos](docs/images/afterglow-optional-icons-example.png)
 
 *Customized installation with user-supplied white logos and a personal app selection. These logo files are not included in the release APK or supplied as an icon pack. App names and marks identify their respective services; no affiliation or endorsement is implied. This screenshot does not grant permission to reuse the marks.*
 
-[Download the preview APK](https://github.com/vibe-code-viking/dumbtv/releases/tag/v0.1.0-preview.1) � read the compatibility and signing notes below before installing.
+The Afterglow rename is being prepared for the next preview. The earlier release is still available as [Viking preview 0.1.0-preview.1](https://github.com/vibe-code-viking/dumbtv/releases/tag/v0.1.0-preview.1); its filename and label retain the old name.
 
 ## Status
 
