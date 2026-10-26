@@ -126,6 +126,7 @@ final class Config {
             values.put("inputs", "off");
             values.put("background", "charcoal-smoke");
             values.put("artwork", "text");
+            values.put("theme", "afterglow");
             values.put("tile_style", "brand");
             save();
         }

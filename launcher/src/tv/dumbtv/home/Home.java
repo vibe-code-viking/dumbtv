@@ -698,7 +698,8 @@ public final class Home extends Activity {
     }
 
     private int[] cardSize() {
-        if ("monochrome".equals(cfg.get("theme", ""))) {
+        String theme = cfg.get("theme", "afterglow");
+        if ("afterglow".equals(theme) || "monochrome".equals(theme)) {
             int width = (getResources().getDisplayMetrics().widthPixels - dp(112) - dp(72)) / 5;
             return new int[] {width, Math.round(width * 0.55f)};
         }
