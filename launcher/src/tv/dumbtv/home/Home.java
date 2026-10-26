@@ -193,6 +193,16 @@ public final class Home extends Activity {
     private void firstApps(Future<List<Item>> catalog) {
         try {
             apps.all = catalog.get();
+            // Keep older personal selections, using the normal editable visibility controls.
+            List<String> only = cfg.list("apps.only");
+            if (!only.isEmpty()) {
+                List<String> hidden = cfg.list("apps.hide");
+                for (Item item : apps.all) {
+                    if (!only.contains(item.id) && !hidden.contains(item.id)) hidden.add(item.id);
+                }
+                cfg.setList("apps.hide", hidden);
+                cfg.set("apps.only", null);
+            }
         } catch (ExecutionException e) {
             loadApps(null);
             return;

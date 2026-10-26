@@ -8,3 +8,5 @@
 - `docs/images/afterglow-brand-fades-preview.png`: actual isolated community test build screenshot, supplied for interface illustration. It shows installed app icons, not redistributed standalone logo files. No account/device/network identifiers are visible. Service marks remain third-party property.
 
 - `docs/images/afterglow-optional-icons-example.png`: illustrative screenshot of the customized installation, showing optional locally supplied white service logos. It contains no visible private identifiers. Standalone logo assets are not provided; inclusion in a screenshot does not grant asset rights or establish brand approval.
+
+- `docs/images/afterglow-three-row-personal.png`: actual configured Afterglow installation captured on 2026-10-26 after an in-place update. Shows thirteen user-selected apps and optional personal white logos; no private device, account or network identifiers are visible. These logo files are not bundled or made available by the public release. See docs/THREE-ROW-SETUP.md for settings.

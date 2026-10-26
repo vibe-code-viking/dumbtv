@@ -4,15 +4,17 @@ Previously called Viking Theme. Community skin by vibe-code-viking, based on [hu
 
 A quiet TV dashboard with uppercase app names, optional monochrome corner icons, darkened brand-color fades, thin white focus outlines, black tile borders, and a bundled Charcoal Smoke wallpaper.
 
-![Afterglow on Fire TV with Brand Fades and Charcoal Smoke](docs/images/afterglow-brand-fades-preview.png)
+![Afterglow on Fire TV with thirteen selected apps in three rows](docs/images/afterglow-three-row-personal.png)
 
-*Actual isolated test installation using installed app icons in grayscale. Optional user-supplied white logos are not included. The grid scrolls to additional apps.*
+*Actual Afterglow installation with the owner's selected apps, custom names and optional locally supplied white logos. The public APK does not include those logos or a household app list. Its fallback is installed app icons in grayscale.*
 
-### Optional custom-logo example
+**Get this clean three-row layout:** choose Grid, White accent, Charcoal Smoke, Brand fades, Corner app icons Shown and Inputs Hidden. In Apps on home screen, show 11–15 apps (13 are shown above); five columns produce three rows. [Full settings and arrangement guide](docs/THREE-ROW-SETUP.md).
 
-![Example of Afterglow with locally supplied white app logos](docs/images/afterglow-optional-icons-example.png)
+### Public icon fallback
 
-*Customized installation with user-supplied white logos and a personal app selection. These logo files are not included in the release APK or supplied as an icon pack. App names and marks identify their respective services; no affiliation or endorsement is implied. This screenshot does not grant permission to reuse the marks.*
+![Afterglow's public fallback with installed app icons in grayscale](docs/images/afterglow-brand-fades-preview.png)
+
+*Earlier community preview illustrating the installed-icon fallback. Default app discovery follows each user's installed apps; the selection is configurable. Service marks belong to their respective owners; screenshots are not a logo license.*
 
 The Afterglow rename is being prepared for the next preview. The earlier release is still available as [Viking preview 0.1.0-preview.1](https://github.com/vibe-code-viking/dumbtv/releases/tag/v0.1.0-preview.1); its filename and label retain the old name.
 
